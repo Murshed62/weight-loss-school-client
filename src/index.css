@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  max-width: 1280px;
+  margin: auto;
+}
+.bg-pageNotFound{
+  background-image: url("././assets/pageNotFound.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
