@@ -35,26 +35,40 @@ const Login = () => {
         }).catch(error => {
             setLoading(false);
             console.log(error.message);
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: error.message,
-              })
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Oops...',
+            //     text: error.message,
+            //   })
         })
     }
 
     //handle google sign in
     const handleGoogleSignIn = () => {
         googleSignIn().then(result => {
-            console.log(result.user);
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'User Login Successfully',
-                showConfirmButton: false,
-                timer: 1500
-              })
-              navigate(from, {replace: true})
+           const loggedUser = result.user;
+           console.log(loggedUser);
+           const userInfo = {name: loggedUser.displayName, email:loggedUser.email, photoUrl: loggedUser.photoURL, role: 'student'}
+           fetch('http://localhost:5000/users',{
+               method: 'POST',
+               headers: {
+                   'content-type': 'application/json'
+               },
+               body:JSON.stringify(userInfo)
+           }).then(result=> result.json()
+           .then(data=>
+            {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  navigate(from, {replace: true})
+               })
+           )
+           
         }).catch(error => {
             setLoading(false);
             console.log(error.message);
@@ -94,7 +108,7 @@ const Login = () => {
             <div className='mx-auto'>
                 <img className='w-[200px]' src={weight} alt="" />
             </div>
-            <form onSubmit={handleSubmit} className="card-body p-10 pt-0">
+            <form onSubmit={handleSubmit} className="card-body  pt-0">
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-orange-600">Email</span>
@@ -105,21 +119,22 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text text-orange-600">Password</span>
                     </label>
-                    <input type="text" placeholder="password" name='password' className="input input-bordered" />
+                    <input type="password" placeholder="password" name='password' className="input input-bordered" />
                     <label className="label">
                         <button onClick={handleReset} className="label-text-alt text-orange-600">Forgot password?</button>
                     </label>
                     <span className='text-center'>Are you new? Please <Link className='text-orange-600 font-semibold' to="/register">Register here</Link></span>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control ">
                     <button className="btn bg-orange-400 hover:bg-[#fd1d1d] font-bold text-white">
                         {loading ? <TbFidgetSpinner className='animate-spin' size={25}></TbFidgetSpinner> : 'Login'}
                     </button>
                 </div>
-                <div className="form-control">
+                
+            </form>
+            <div className="form-control">
                     <button onClick={handleGoogleSignIn} className="btn btn-outline  hover:bg-[#fd1d1d] border-none"><FcGoogle className='text-3xl'></FcGoogle></button>
                 </div>
-            </form>
 
         </div></>
     );

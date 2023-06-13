@@ -1,0 +1,53 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "name": "Weight Loss 101",
+        "instructor": "John Doe",
+        "available_seats": 20,
+        "price": 99.99,
+        "image": "https://example.com/images/weight_loss_101.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Advanced Weight Loss Techniques",
+        "instructor": "Jane Smith",
+        "available_seats": 15,
+        "price": 149.99,
+        "image": "https://example.com/images/advanced_weight_loss.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Healthy Eating for Weight Loss",
+        "instructor": "Michael Johnson",
+        "available_seats": 10,
+        "price": 79.99,
+        "image": "https://example.com/images/healthy_eating_weight_loss.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Yoga for Weight Loss",
+        "instructor": "Emily Wilson",
+        "available_seats": 12,
+        "price": 79.99,
+        "image": "https://example.com/images/yoga_weight_loss.jpg"
+      },
+      {
+        "id": 5,
+        "name": "High-Intensity Interval Training (HIIT)",
+        "instructor": "David Thompson",
+        "available_seats": 18,
+        "price": 119.99,
+        "image": "https://example.com/images/hiit_weight_loss.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Nutrition and Meal Planning",
+        "instructor": "Sarah Johnson",
+        "available_seats": 25,
+        "price": 89.99,
+        "image": "https://example.com/images/nutrition_meal_planning.jpg"
+      }
+    ]
+  }
+  

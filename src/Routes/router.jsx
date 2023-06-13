@@ -6,6 +6,16 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PageNotFound from "../pages/PageNotFound/PageNotFound";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import Instructors from "../pages/Instructors/Instructors";
+import Classes from "../pages/Classes/Classes";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import MyClass from "../pages/Dashboard/MyClass/MyClass";
+import AddClass from "../pages/Dashboard/AddClass/AddClass";
+import ManageClass from "../pages/Dashboard/Manage/ManageClass";
+import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 
 
@@ -26,7 +36,45 @@ export const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>
+        },
+        {
+          path:'instructors',
+          element:<Instructors></Instructors>
+        },
+        {
+          path:'classes',
+          element:<Classes></Classes>
         }
       ]
     },
+    {
+      path: '/dashboard',
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children:[
+        {
+          path:'allusers',
+          element:<AllUsers></AllUsers>
+        },
+        {
+          path:'myclasses',
+          element:<MyClass></MyClass>
+        },
+        {
+          path:'addaclass',
+          element:<AddClass></AddClass>
+        },
+        {
+          path:'manageclass',
+          element:<ManageClass></ManageClass>
+        },
+        {
+          path:'myselectedclass',
+          element:<MySelectedClass></MySelectedClass>
+        },
+        {
+          path:'payment/:id',
+          element:<Payment></Payment>
+        }
+      ]
+    }
   ]);

@@ -206,3 +206,10 @@ html {
   background-size: cover;
   max-height: 60vh;
 }
+/* footer bg */
+.footerBG{
+  background-image: url(././assets/footerBG.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

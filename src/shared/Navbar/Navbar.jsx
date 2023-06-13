@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const {user, logOut} = useAuth();
@@ -11,10 +12,11 @@ const Navbar = () => {
 
     const navOptions = <>
     <li><Link className="font-semibold text-2xl" to="/">Home</Link></li>
-    <li><Link className="font-semibold text-2xl" to="/instructors">Instructors</Link></li>
-    <li><Link className="font-semibold text-2xl" to="/classes">Classes</Link></li>
-    <li><Link className="font-semibold text-2xl" to="/dashboard">Dashboard</Link></li>
-    <li><Link className="font-semibold text-2xl" to="/classes">Classes</Link></li>
+    <li><Link className="font-semibold text-2xl" to="instructors">Instructors</Link></li>
+    <li><Link className="font-semibold text-2xl" to="classes">Classes</Link></li>
+    {
+      user && <li><Link className="font-semibold text-2xl" to="dashboard">Dashboard</Link></li>
+    }
     
 </>
 
@@ -29,7 +31,7 @@ const Navbar = () => {
        {navOptions}
       </ul>
     </div>
-    <Link className="btn btn-ghost normal-case text-xl"><span className="text-orange-500">SlimFit</span> <span className="text-[#fd1d1d]">Academy</span></Link>
+    <Link className="btn btn-ghost normal-case text-xl"><span><img width={30} src={logo} alt="" /></span></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
