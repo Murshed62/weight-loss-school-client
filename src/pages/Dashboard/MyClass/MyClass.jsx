@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
+import { FcFeedback } from 'react-icons/fc';
 
 const MyClass = () => {
   const { user } = useAuth();
   const [classes, setClasses] = useState([]);
+
+  const [feedbackData, setFeedbackData] = useState(null);
 
   useEffect(() => {
     fetch(`https://weight-loss-school-server.vercel.app/addclass?email=${user?.email}`)
@@ -23,7 +26,7 @@ const MyClass = () => {
             <th>Class Image</th>
             <th>Class Name</th>
             <th>Seat</th>
-            <th>Enrolled Student</th>
+            
             <th>Price</th>
             <th>Status</th>
             <th>Feedback</th>
@@ -51,10 +54,44 @@ const MyClass = () => {
               </td>
               <td>{perClass?.seats}</td>
 
-              <td></td>
+            
               <td>{perClass?.price}</td>
               <td>{perClass?.status}</td>
-              <td></td>
+              
+              <td>
+                  <label
+                    htmlFor="my_modal_6"
+                    className="btn bg-orange-300 hover:bg-orange-500 px-2 py-1 rounded-sm"
+                    onClick={() =>
+                      setFeedbackData(
+                        perClass.feedback ? perClass.feedback : "No Feedback"
+                      )
+                    }
+                  >
+                    <FcFeedback className="text-2xl"></FcFeedback>
+                  </label>
+
+                  <input
+                    type="checkbox"
+                    id="my_modal_6"
+                    className="modal-toggle"
+                  />
+                  <div className="modal">
+                    <div className="modal-box">
+                      <p className="py-4 border-emerald-600 border-2 rounded-xl px-3">
+                        {feedbackData}
+                      </p>
+                      <div className="modal-action">
+                        <label
+                          htmlFor="my_modal_6"
+                          className="btn bg-emerald-500 hover:bg-emerald-700"
+                        >
+                          Close!
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </td>
             </tr>))
           }
 

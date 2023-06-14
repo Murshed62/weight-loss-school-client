@@ -36,13 +36,13 @@ const ManageClass = () => {
   console.log(data);
           if(data?.modifiedCount > 0){
               //  update state 
-             const remaining=classes.filter(cls => cls._id !== id)
-             console.log(remaining);
-             const updated=classes.find(cls=> cls._id === id);
-             console.log(updated);
-             updated.status='denied'
-             const newClasses=[updated,...remaining];
-             setClasses(newClasses)
+            //  const remaining=classes.filter(cls => cls._id !== id)
+            //  console.log(remaining);
+            //  const updated=classes.find(cls=> cls._id === id);
+            //  console.log(updated);
+            //  updated.status='denied'
+            //  const newClasses=[updated,...remaining];
+            //  setClasses(newClasses)
           }
         })
       }
