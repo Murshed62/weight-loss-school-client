@@ -168,7 +168,7 @@ const ManageClass = () => {
               </td>
               <td>
                 {perClass.status === 'denied' ? <span className="rounded-lg p-2 bg-red-200 hover:bg-red-300 btn btn-ghost btn-xs">Denied</span> : <button onClick={() => handleDenied(perClass._id)} className="btn btn-ghost bg-red-500 btn-xs">
-                  Denied
+                  Denie
                 </button>}
               </td>
               <td className="font-bold uppercase">{perClass.status}</td>
