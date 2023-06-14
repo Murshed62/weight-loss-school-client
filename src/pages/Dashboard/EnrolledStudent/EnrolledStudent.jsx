@@ -10,7 +10,7 @@ const EnrolledStudent = () => {
     
     return (
         <div>
-            <h1 className="text-center font-bold text-orange-500 text-3xl mb-2">Enrolled Classes List</h1>
+            <h1 className="text-center font-bold text-orange-500 text-3xl mb-2 mt-2">Enrolled Classes List</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

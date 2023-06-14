@@ -42,13 +42,11 @@ const MySelectedClass = () => {
         })
 
 
-
-
-
     }
 
     return (
         <div>
+            <h1 className='text-orange-500 text-center text-3xl font-bold mt-2'>My Selected Class</h1>
             <div className="overflow-x-auto">
 
                 <table className="table">
