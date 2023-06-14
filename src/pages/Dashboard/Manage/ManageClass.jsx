@@ -162,7 +162,7 @@ const ManageClass = () => {
 
               <td>{perClass?.price}</td>
               <td>
-                {perClass?.status === 'approved' ? <span className="rounded-lg p-2 bg-orange-200 hover:bg-orange-300 btn btn-ghost btn-xs">approved</span> : <button onClick={() => handleStatus(perClass._id)} className="btn btn-ghost bg-orange-400 btn-xs">
+                {perClass?.status === 'approved' ? <span className="rounded-lg p-2 bg-orange-200 hover:bg-orange-300 btn btn-ghost btn-xs">approved</span> : <button onClick={() => handleStatus(perClass._id)} className="btn btn-ghost bg-orange-500 btn-xs">
                   Approved
                 </button>}
               </td>
