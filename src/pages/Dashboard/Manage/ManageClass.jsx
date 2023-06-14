@@ -174,7 +174,7 @@ const ManageClass = () => {
               <td className="font-bold uppercase">{perClass.status}</td>
               <th>
                  <button  htmlFor="my_modal_6" onClick={()=>handleFeedback(perClass._id)} className="btn btn-ghost text-white bg-[#63bced] hover:bg-blue-500 btn-xs">
-                    feedbac 
+                    feedback 
                   </button>
 
                 </th>
