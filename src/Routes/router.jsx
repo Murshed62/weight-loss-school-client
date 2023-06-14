@@ -16,6 +16,9 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import ManageClass from "../pages/Dashboard/Manage/ManageClass";
 import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import EnrolledStudent from "../pages/Dashboard/EnrolledStudent/EnrolledStudent";
+import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -53,7 +56,7 @@ export const router = createBrowserRouter([
       children:[
         {
           path:'allusers',
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
         {
           path:'myclasses',
@@ -65,7 +68,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'manageclass',
-          element:<ManageClass></ManageClass>
+          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
         },
         {
           path:'myselectedclass',
@@ -74,6 +77,14 @@ export const router = createBrowserRouter([
         {
           path:'payment/:id',
           element:<Payment></Payment>
+        },
+        {
+          path:'enrollstudent',
+          element:<EnrolledStudent></EnrolledStudent>
+        },
+        {
+          path:'paymenthistory',
+          element:<PaymentHistory></PaymentHistory>
         }
       ]
     }

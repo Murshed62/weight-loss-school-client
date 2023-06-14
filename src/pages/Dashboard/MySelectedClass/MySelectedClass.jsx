@@ -2,10 +2,12 @@ import React from 'react';
 import useStudentSelect from '../../../hooks/useStudentSelect';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import deleteIcon from '../../../assets/delete.png';
+import payIcon from '../../../assets/credit-card.png';
 
 const MySelectedClass = () => {
-    const [isStudent, refetch, isStudentLoading] = useStudentSelect();
-    console.log(isStudent);
+    const [isSelect, refetch, isSelectLoading] = useStudentSelect();
+    
 
     const handleDelete = (select) => {
 
@@ -22,7 +24,7 @@ const MySelectedClass = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/selectedClass/${select}`, {
+                fetch(`https://weight-loss-school-server.vercel.app/selectedClass/${select}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -69,7 +71,7 @@ const MySelectedClass = () => {
 
                         {/* row 1 */}
                         {
-                            isStudent?.map((selectClass, index) => (<tr>
+                            isSelect?.map((selectClass, index) => (<tr>
                                 <th>
                                     {index + 1}
                                 </th>
@@ -96,10 +98,10 @@ const MySelectedClass = () => {
                                 <td>
                                     {console.log(selectClass._id)}
                                     <Link to={`/dashboard/payment/${selectClass._id}`}>
-                                        <button className='bg-[#9bef8a] hover:bg-[#c2fff8] p-2 rounded-lg font-bold'>Pay</button>
+                                        <button className='bg-orange-100 hover:bg-orange-200 p-2 rounded-lg font-bold'><img width={16} src={payIcon} alt="" /></button>
                                     </Link>
                                 </td>
-                                <td><button onClick={() => handleDelete(selectClass?._id)} className='bg-[#85e8a8] hover:bg-[#ca9d15] p-2 rounded-lg font-bold'>delete</button></td>
+                                <td><button onClick={() => handleDelete(selectClass?._id)} className='bg-red-200 hover:bg-red-300 p-2 rounded-lg font-bold'><img width={16} src={deleteIcon} alt="" /></button></td>
 
                             </tr>))
                         }

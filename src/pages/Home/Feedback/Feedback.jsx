@@ -3,8 +3,7 @@ import feedback from '../../../assets/feedback.gif';
 
 const Feedback = () => {
     return (
-        <div>
-            <h1 className='text-center my-10 font-semibold text-3xl text-orange-600'>Student Feedback</h1>
+        <div className='mt-10'>
             
             <div className="hero min-h-fit bg-orange-200">
   <div className="hero-content flex-col lg:flex-row-reverse">

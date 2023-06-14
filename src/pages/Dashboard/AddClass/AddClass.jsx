@@ -10,17 +10,17 @@ const AddClass = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const {user} = useAuth();
-    // console.log(user.email);
+    
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
-    console.log(img_hosting_url);
+    
 
     const [axiosSecure] = useAxiosSecure();
     const onSubmit = data => {
-console.log(data);
-        console.log('clicked');
+
+        
         const formData = new FormData();
         formData.append('image', data.choose[0])
-        console.log(formData);
+        
 
         fetch(img_hosting_url, {
             method: 'POST',
@@ -31,11 +31,11 @@ console.log(data);
             if(imgResponse.success){
                 const imgURL = imgResponse.data.display_url;
                 const {name, email, instructor, price, seats} = data;
-                const newClass = {name, price: parseFloat(price), email, instructor,seats, choose:imgURL, status:'pending'}
-                console.log(newClass)
+                const newClass = {name, price: parseFloat(price), email, instructor,seats: parseInt(seats), choose:imgURL, status:'pending'}
+               
                 axiosSecure.post('/addclass', newClass)
                 .then(data => {
-                    console.log( data.data)
+                    
                     if(data.data.insertedId){
                         reset();
                         Swal.fire({

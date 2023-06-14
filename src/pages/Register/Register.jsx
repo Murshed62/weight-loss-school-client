@@ -22,16 +22,16 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photo)
-                .then(()=> {
-                    const userInfo = {name: data.name, email: data?.email, role: 'student', photoUrl: data?.photo}
-                    fetch('http://localhost:5000/users',{
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json'
-                        },
-                        body:JSON.stringify(userInfo)
+                    .then(() => {
+                        const userInfo = { name: data.name, email: data?.email, role: 'student', photoUrl: data?.photo }
+                        fetch('https://weight-loss-school-server.vercel.app/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(userInfo)
+                        })
                     })
-                })
                     .then(() => {
                         reset();
                         setLoading(false);
@@ -42,7 +42,7 @@ const Register = () => {
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        navigate('/') 
+                        navigate('/')
                     })
                     .catch(error => {
                         Swal.fire({

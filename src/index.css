@@ -5,6 +5,7 @@
 body{
   max-width: 1280px;
   margin: auto;
+  font-family: 'Poppins', sans-serif;
 }
 .bg-pageNotFound{
   background-image: url("././assets/pageNotFound.jpg");
@@ -212,4 +213,17 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+
+/* footer style for mobile device */
+@media screen and (max-width: 776px) {
+  .f-h{
+    font-size: 30px;
+  }
+  .f-c{
+    font-size: 15px;
+    margin: auto;
+    margin-top: 5px;
+  }
 }
