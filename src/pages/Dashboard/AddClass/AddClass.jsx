@@ -54,7 +54,7 @@ const AddClass = () => {
     
     return (
         <div>
-            <h1 className="font-bold text-3xl text-orange-500 flex justify-center">Add a class</h1>
+            <h1 className="font-bold text-3xl text-orange-500 flex justify-center mt-2">Add a class</h1>
             {/* form start */}
 
             <div className="card w-full max-w-lg shadow-2xl bg-base-100 mx-auto my-10">
@@ -93,7 +93,7 @@ const AddClass = () => {
                                 </label>
                                 <input type="file" {...register("choose", {
                                     required: true,
-                                })} placeholder="choose file" className="input input-bordered w-[150px]" />
+                                })} placeholder="choose file" className="input input-bordered w-[140px]" />
                                 {errors.choose?.type === 'required' && <p className="text-red-600">No file chosen</p>}
                             </div>
                             <div className="form-control">
@@ -103,7 +103,7 @@ const AddClass = () => {
                                 <input type="email" defaultValue={user?.email} {...register("email", {
                                     required: true,
                             
-                                })} placeholder="write Instructor here..." className="input input-bordered" />
+                                })} placeholder="write Instructor here..." className="input input-bordered w-[140px]" />
                                 {errors.email?.type === 'required' && <p className="text-red-600">Instructor email required</p>}
                                
                             </div>
@@ -114,7 +114,7 @@ const AddClass = () => {
                                 <input type="number" {...register("price", {
                                     required: true,
                             
-                                })} placeholder="give your price..." className="input input-bordered" />
+                                })} placeholder="give your price..." className="input input-bordered w-[140px]" />
                                 {errors.price?.type === 'required' && <p className="text-red-600">no price write</p>}
                                
                             </div>

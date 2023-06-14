@@ -9,9 +9,12 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
   const [isStudent] = useStudent();
-  const {user} = useAuth();
+  const {user, logOut} = useAuth();
   
-  
+  const handleLogOut = ()=>{
+    logOut()
+    
+  }
   
 
 
@@ -65,8 +68,13 @@ const Dashboard = () => {
           <li className="bg-orange-400 mb-3 text-white font-bold rounded hover:bg-orange-500"><Link to='/'>Home</Link></li>
           <li className="bg-orange-400 mb-3 text-white font-bold rounded hover:bg-orange-500"><Link to='/instructors'>Instructors</Link></li>
           <li className="bg-orange-400 mb-3 text-white font-bold rounded hover:bg-orange-500"><Link to='/classes'>Classes</Link></li>
+          <li className="btn bg-orange-500 w-1/2 hover:bg-orange-600 mx-auto mt-10 text-white"><Link
+        to="/login"
+        onClick={handleLogOut}
+        className="btn font-bold text-2xl bg-orange-500 hover:bg-orange-600 border-none text-white"
+        ><span className="me-3">Log Out</span></Link></li>
         </ul>
-
+          
       </div>
     </div>
   );
