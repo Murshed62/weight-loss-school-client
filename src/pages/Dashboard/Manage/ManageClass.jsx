@@ -107,7 +107,7 @@ const ManageClass = () => {
 
   return (
     <div className="overflow-x-auto">
-      <h1 className="text-orange-500 font-bold text-center text-3xl">Manage Classes</h1>
+      <h1 className="text-orange-500 font-bold text-center text-3xl mt-2">Manage Classes</h1>
       <div>
 <input type="checkbox" id="my_modal_6" className="modal-toggle" />
 <div className="modal">
