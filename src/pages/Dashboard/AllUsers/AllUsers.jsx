@@ -41,7 +41,7 @@ const AllUsers = () => {
     
     return (
         <div>
-            <h1 className="text-center font-bold text-3xl text-orange-400">Manage users</h1>
+            <h1 className="text-center font-bold text-3xl text-orange-400 mt-2">Manage users</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
