@@ -70,7 +70,7 @@ const Register = () => {
                 <div className='mx-auto'>
                     <img className='w-[200px]' src={fruits} alt="" />
                 </div>
-                <form onSubmit={handleSubmit(onSubmit)} className="card-body p-10 pt-0">
+                <form onSubmit={handleSubmit(onSubmit)} className="card-body p-5 pt-0">
                     <div className="flex gap-3">
                         <div>
                             <div className="form-control">

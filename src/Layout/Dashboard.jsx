@@ -3,6 +3,7 @@ import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useStudent from "../hooks/useStudent";
 import useAuth from "../hooks/useAuth";
+import { FiLogOut } from "react-icons/fi";
 
 
 const Dashboard = () => {
@@ -31,7 +32,7 @@ const Dashboard = () => {
 
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-80 h-full  text-base-content">
         <div className="avatar online mx-auto mb-5 border-4 border-orange-300 rounded-full p-1">
   <div className="w-20 rounded-full">
     <img src={user?.photoURL} />
@@ -71,8 +72,8 @@ const Dashboard = () => {
           <li className="btn bg-orange-500 w-1/2 hover:bg-orange-600 mx-auto mt-10 text-white"><Link
         to="/login"
         onClick={handleLogOut}
-        className="btn font-bold text-2xl bg-orange-500 hover:bg-orange-600 border-none text-white"
-        ><span className="me-3">Log Out</span></Link></li>
+        className="btn w-full font-bold text-2xl bg-orange-500 hover:bg-orange-600 border-none text-white"
+        >Log Out <FiLogOut></FiLogOut></Link></li>
         </ul>
           
       </div>
